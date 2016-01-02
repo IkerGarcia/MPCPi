@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#-*-coding:utf-8-*-
 print("""
 This program turns your Explorer HAT into an Akai MPC!
 
@@ -30,7 +31,7 @@ def handle(ch, evt):
         samples=['drumkit/808/8081.wav', 
 	         'drumkit/808/8082.wav',
 	         'drumkit/808/8083.wav',
-	         'drumkit/808/8084.wav'] #The location of our llops.     
+	         'drumkit/808/8084.wav'] #The location of our loops.     
 	
 	for x in range(4): #Fills the sounds list, with our loops.
 	  sounds.insert(x,(pygame.mixer.Sound(samples[x])))
@@ -47,20 +48,30 @@ def handle(ch, evt):
         for x in range(4):
 	  sounds.insert(x,(pygame.mixer.Sound(samples[x])))
 	
-      if ch == 7: #DEACTIVATED, UNLESS LOOPS ARE ADDED. 
+      if ch == 7: #Same behaviour as previous channel, different loops. 
         explorerhat.light.off()
         explorerhat.light.red.on()
         print("Third drumkit selected")
-      # Write down the location of your loops.
-      # Copy the for statement from previous channels.
+        samples=['drumkit/Rock/Rock1.wav',
+		 'drumkit/Rock/Rock2.wav',
+		 'drumkit/Rock/Rock3.wav',
+		 'drumkit/Rock/Rock4.wav']
+	
+	for x in range(4):
+	  sounds.insert(x,(pygame.mixer.Sound(samples[x])))
 		
-      if ch == 8: #DEACTIVATED, UNLESS LOOPS ARE ADDED.
+      if ch == 8: #Same behaviour as previous channel, different loops.
         explorerhat.light.off()
         explorerhat.light.green.on()
         print("Fourth drumkit selected")
-      # Write down the location of your loops.
-      # Copy the for statement from previous channels.
-  
+        samples=['drumkit/Funk/Funk1.wav',
+		 'drumkit/Funk/Funk2.wav',
+		 'drumkit/Funk/Funk3.wav',
+		 'drumkit/Funk/Funk4.wav']
+  	
+	for x in range (4):
+	  sounds.insert(x,(pygame.mixer.Sound(samples[x])))
+
   if ch <= 4: #This enables us to use touch pads from 1 to 4 as drums.
     if evt == 'press':
       sounds[ch-1].play(loops=0) #Plays a sound

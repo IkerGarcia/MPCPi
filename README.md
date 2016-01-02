@@ -4,7 +4,7 @@ This project turns Pimoroni's Explorer HAT into a kind of Akai MPC, so we can us
 
 ![Image](http://www.vintagesynth.com/akai/mpc2000xl.jpg)
 
-It is a modificaton of the original drums.py program by Pimoroni.
+It is a modification of the original drums.py program by Pimoroni.
 
 You can add your own drum kits and play 16 different sounds.
 
